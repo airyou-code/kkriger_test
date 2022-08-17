@@ -27,6 +27,9 @@ class Game():
     def get_pid(self):
         for process in psutil.process_iter():
             if process.name() == game.path.split('\\')[-1]:
+                print(process.pid)
+                print(psutil.Process(process.pid))
+                print(psutil.cpu_times)
                 return process.pid
         return None
 
